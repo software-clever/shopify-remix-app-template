@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "fd6539790becb4db716b9a5a56747984"
+application_url = "https://partly-korean-matrix-poetry.trycloudflare.com"
+embedded = true
+name = "remix-app-template"
+handle = "remix-app-template-15"
+
+[webhooks]
+api_version = "2025-01"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://partly-korean-matrix-poetry.trycloudflare.com/auth/callback",
+  "https://partly-korean-matrix-poetry.trycloudflare.com/auth/shopify/callback",
+  "https://partly-korean-matrix-poetry.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
