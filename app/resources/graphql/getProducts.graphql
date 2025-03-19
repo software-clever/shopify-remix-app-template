@@ -1,0 +1,9 @@
+query getProducts($first: Int, $after: String) {
+  products(first: $first, after: $after) {
+    nodes {
+      id
+      handle
+    }
+    
+  }
+}

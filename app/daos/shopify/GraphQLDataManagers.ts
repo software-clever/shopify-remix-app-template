@@ -1,7 +1,12 @@
-import { AdminGraphqlClient } from "@shopify/shopify-app-remix/server";
-import ShopifyDataManagers from "../ShopifyDataManagers";
+import { ShopifyQueryExecutorInterface } from ".";
+import { ShopifyDataManagers } from "..";
+import { ShopifyProductManager } from "../ShopifyProductManager";
+import { GraphQLProductManager } from "./GraphQLProductManager";
 
 export default class GraphQLDataManager implements ShopifyDataManagers {
-    constructor(private readonly graphql: AdminGraphqlClient) {
+    productManager: ShopifyProductManager;
+    constructor(private readonly queryExecutor: ShopifyQueryExecutorInterface) {
+        this.productManager = new GraphQLProductManager(this.queryExecutor);
     }
+    
 }

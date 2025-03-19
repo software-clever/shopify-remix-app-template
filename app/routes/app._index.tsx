@@ -20,7 +20,7 @@ export default function Index() {
     };
     const app = createApp(config);
     const redirect = Redirect.create(app);
-    redirect.dispatch(Redirect.Action.APP, '/app/additional');
+    redirect.dispatch(Redirect.Action.APP, '/app/products');
   },[shopify])
 
   return (
