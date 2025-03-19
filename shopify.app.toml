@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "fd6539790becb4db716b9a5a56747984"
-application_url = "https://partly-korean-matrix-poetry.trycloudflare.com"
+application_url = "https://presented-wb-arts-suddenly.trycloudflare.com"
 embedded = true
 name = "remix-app-template"
 handle = "remix-app-template-15"
@@ -15,9 +15,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://partly-korean-matrix-poetry.trycloudflare.com/auth/callback",
-  "https://partly-korean-matrix-poetry.trycloudflare.com/auth/shopify/callback",
-  "https://partly-korean-matrix-poetry.trycloudflare.com/api/auth/callback"
+  "https://presented-wb-arts-suddenly.trycloudflare.com/auth/callback",
+  "https://presented-wb-arts-suddenly.trycloudflare.com/auth/shopify/callback",
+  "https://presented-wb-arts-suddenly.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

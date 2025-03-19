@@ -9,7 +9,12 @@ import {
   BlockStack,
 } from "@shopify/polaris";
 import { TitleBar } from "@shopify/app-bridge-react";
-
+import { authenticate } from "app/shopify.server";
+import { LoaderFunctionArgs } from "@remix-run/node";
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  await authenticate.admin(request);
+  return null;
+};
 export default function AdditionalPage() {
   return (
     <Page>
