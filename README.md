@@ -49,7 +49,7 @@ A **new** Shopify app will appear in your [Partner Dashboard](https://partners.s
 5. **Start Development**
 
 ```bash
-shopify app Development**
+shopify app dev
 ```
 
 - This runs local servers and opens a secure tunnel, letting you preview and test your app.
