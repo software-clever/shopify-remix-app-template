@@ -20,9 +20,15 @@ export interface GraphQLQueryResult<T> {
   data?: T;
   errors?: any;
 }
-export type SingleObjectResponse<TName extends string, TObject extends GraphQLObject> = {
+export type SingleObjectResponse<
+  TName extends string,
+  TObject extends GraphQLObject,
+> = {
   [key in TName]: TObject;
 };
-export type ConnectionResponse<TName extends string, TObject extends GraphQLObject> = {
+export type ConnectionResponse<
+  TName extends string,
+  TObject extends GraphQLObject,
+> = {
   [key in TName]: GraphQLConnection<TObject>;
 };

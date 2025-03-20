@@ -7,7 +7,7 @@ export default class FileContentReader {
     this.resourceDir = resourceDir;
   }
   public async read(name: string): Promise<string> {
-    const folder = name.split('.').pop();
+    const folder = name.split(".").pop();
     const filePath = `${this.resourceDir}/${folder}/${name}`;
     try {
       return await fs.readFile(filePath, "utf-8");
