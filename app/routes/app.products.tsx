@@ -17,7 +17,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 };
 type LoaderData = SerializeFrom<typeof loader>;
 export default function ProductPage() {
-  const loaderData = useLoaderData<typeof loader>();
+  const loaderData = useLoaderData<LoaderData>();
   const [products, setProducts] = useState<LoaderData["products"]>([]);
   useEffect(() => {
     if (loaderData?.products) {
