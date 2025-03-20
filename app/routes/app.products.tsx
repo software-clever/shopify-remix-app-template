@@ -52,12 +52,12 @@ export default function ProductPage() {
   );
 }
 interface props {
-  Products: Product[];
+  Products: LoaderData["products"];
 }
 const ProductList: React.FC<props> = ({ Products }) => {
   return (
     <List>
-      {Products.map((p: Product) => (
+      {Products.map((p) => (
         <List.Item key={p.id}>{p.handle}</List.Item>
       ))}
     </List>
