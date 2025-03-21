@@ -1,6 +1,6 @@
 import { QueryExecutor } from ".";
+import { PGDataManagers } from "..";
 import FileContentReader from "../FileContentReader";
-import { PGDataManagers } from "../PGDataManagers";
 import { getPool } from "./createPool";
 
 export default class DBDataManagers implements PGDataManagers {

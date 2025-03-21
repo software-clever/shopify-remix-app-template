@@ -6,7 +6,7 @@ import { Product } from "app/models/Product";
 import { ToastResponse } from "app/models/ToastResponse";
 import { authenticate } from "app/shopify.server";
 import { action } from "../webhooks.app.scopes_update";
-import { SerializeFrom } from "app/models/SerialiseFrom";
+import { SerializeFrom } from "app/models/SerializeFrom";
 import Client from "./client";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
