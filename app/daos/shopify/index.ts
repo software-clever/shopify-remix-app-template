@@ -1,24 +1,20 @@
 import type { AdminGraphqlClient } from "@shopify/shopify-app-remix/server";
-import {
-  GraphQLConnection,
-  GraphQLObject,
-  GraphQLQueryResult,
-} from "app/models/GraphQLData";
+import { GraphQLQueryResult } from "app/models/GraphQLData";
 import FileContentReader from "../FileContentReader";
+import logger from "app/utils/logger";
 
 export interface ShopifyQueryExecutorInterface {
   queryByName<T>(
+    graphqlClient: AdminGraphqlClient,
     name: string,
     variables?: Record<string, any>,
   ): Promise<GraphQLQueryResult<T>>;
 }
-export class ShopifyQueryExecutor {
-  constructor(
-    private readonly graphqlClient: AdminGraphqlClient,
-    private readonly fileContentReader: FileContentReader,
-  ) {}
+export class ShopifyQueryExecutor implements ShopifyQueryExecutorInterface {
+  constructor(private readonly fileContentReader: FileContentReader) {}
 
   public async queryByName<T>(
+    graphqlClient: AdminGraphqlClient,
     name: string,
     variables?: Record<string, any>,
   ): Promise<GraphQLQueryResult<T>> {
@@ -27,15 +23,26 @@ export class ShopifyQueryExecutor {
     if (!query || query.trim().length === 0) {
       return {
         data: undefined,
-        errors: [{ message: `Query named '${name}' not found or empty.` }],
+        errors: { message: `Query named '${name}' not found or empty.` },
       };
     }
     try {
-      const response = await this.graphqlClient(query, { variables });
+      const response = await graphqlClient(query, { variables });
       const json = await response.json();
       return json;
-    } catch (errors) {
-      return { errors };
+    } catch (err) {
+      const error = {
+        data: undefined,
+        errors: { message: "Could not run query: " },
+      };
+      if (err instanceof Error) {
+        error.errors.message = error.errors.message + err.message;
+        logger.error({ err }, error.errors.message);
+      } else {
+        error.errors.message = error.errors.message + err;
+        logger.error(error.errors.message);
+      }      
+      return error;
     }
   }
 }

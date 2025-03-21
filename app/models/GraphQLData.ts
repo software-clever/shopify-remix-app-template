@@ -18,7 +18,26 @@ export interface GraphQLObject {
 }
 export interface GraphQLQueryResult<T> {
   data?: T;
-  errors?: any;
+  errors?: Errors;
+}
+export interface Errors {
+  networkStatusCode?: number;
+  message: string;
+  GraphQLErrors?: GraphQLError[];
+}
+export interface GraphQLError {
+  message: string;
+  locations: ErrorLocation[];
+  path: string[];
+  extensions: ErrorExtension;
+}
+export interface ErrorLocation {
+  line: number;
+  column: number;
+}
+export interface ErrorExtension {
+  code: string;
+  documentions: string;
 }
 export type SingleObjectResponse<
   TName extends string,

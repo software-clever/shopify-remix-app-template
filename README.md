@@ -1,6 +1,6 @@
 # Shopify Remix App Template
 
-This repository serves as a **starter template** for building Shopify apps using Remix, Vite, Prisma, and the Shopify CLI. Follow the steps below to scaffold and run a brand-new Shopify app based on this template.
+This repository serves as a **starter template** for building Shopify apps using Remix, Vite, and the Shopify CLI. Follow the steps below to scaffold and run a brand-new Shopify app based on this template.
 
 ---
 
@@ -59,7 +59,7 @@ shopify app dev
 ## Next Steps
 
 - Update the `scopes` in **`shopify.app.toml`** to match the permissions your app needs.  
-- Explore **`src/`** to see your Remix + Vite project structure and start customizing routes, components, etc.  
+- Explore **`app/`** to see your Remix + Vite project structure and start customizing routes, components, etc.  
 - Add or customize **extensions** in the `extensions` folder if desired.  
 - When you’re ready to deploy, see the Shopify docs on [deploying your app](https://shopify.dev/docs/apps).
 

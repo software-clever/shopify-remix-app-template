@@ -1,27 +1,28 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "fd6539790becb4db716b9a5a56747984"
-application_url = "https://cream-mr-doubt-list.trycloudflare.com"
+client_id = "9bd74afe44ed6310d03863f90720a9ee"
+application_url = "https://increasing-were-cited-least.trycloudflare.com"
 embedded = true
-name = "remix-app-template"
-handle = "remix-app-template-15"
+name = "template"
+handle = "template-52"
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
 
 [webhooks]
 api_version = "2025-01"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://cream-mr-doubt-list.trycloudflare.com/auth/callback",
-  "https://cream-mr-doubt-list.trycloudflare.com/auth/shopify/callback",
-  "https://cream-mr-doubt-list.trycloudflare.com/api/auth/callback"
+  "https://increasing-were-cited-least.trycloudflare.com/auth/callback",
+  "https://increasing-were-cited-least.trycloudflare.com/auth/shopify/callback",
+  "https://increasing-were-cited-least.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
 embedded = false
-
-[build]
-automatically_update_urls_on_dev = true
